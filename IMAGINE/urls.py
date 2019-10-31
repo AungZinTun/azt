@@ -20,11 +20,14 @@ from price import urls
 from django.conf import settings
 from django.conf.urls.static import static
 from contact.views import ContactListView
+from django.contrib import admin
 
 urlpatterns = [
+    
     path('admin/', admin_site.urls),
     path('price/', include('price.urls')),
     path('', include('portfolio.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')), 
-    path('contact/', ContactListView.as_view(), name='contact')
+    path('contact/', ContactListView.as_view(), name='contact'),
+    path('adminauth/', admin.site.urls )
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
