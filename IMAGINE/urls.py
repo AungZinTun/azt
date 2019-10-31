@@ -24,7 +24,7 @@ from django.contrib import admin
 
 urlpatterns = [
     
-    path('admin/', admin_site.urls),
+    # path('admin/', admin_site.urls),
     path('price/', include('price.urls')),
     path('', include('portfolio.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')), 
