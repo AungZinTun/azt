@@ -4,4 +4,4 @@ DS_Store
 *.db
 *.pid
 # *.sqlite3
-media/
+# media/

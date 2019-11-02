@@ -21,6 +21,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from contact.views import ContactListView
 from django.contrib import admin
+from django.conf.urls import handler404, handler500
+
+def page_not_found(request):
+    response=render_to_response('404.html', context_instance=RequestContext(request))
+    response.status_code=404
+    return response
 
 urlpatterns = [
     
@@ -28,6 +34,9 @@ urlpatterns = [
     path('price/', include('price.urls')),
     path('', include('portfolio.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')), 
-    path('contact/', ContactListView.as_view(), name='contact')
-    # path('adminauth/', admin.site.urls )
+    path('contact/', ContactListView.as_view(), name='contact'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT )
+hadnler404=page_not_found
+
+
