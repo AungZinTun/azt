@@ -1,6 +1,6 @@
 from django.contrib import admin
-
+from price.admin import admin_site
 # Register your models here.
 from .models import Contact
 
-admin.site.register(Contact)
+admin_site.register(Contact)
