@@ -19,15 +19,11 @@
 			<div class="row">
 				{% for p in object_list %}
 				<div class="col-md-4 ">
-					<a href="{% url 'portfolio:detail' p.slug %}"
-						class="photography-entry img  d-flex justify-content-start align-items-end"
-						style="background-image: url(media/{{p.photo}});">
-						<div class="overlay"></div>
 						<div class="btn btn-info text ml-4 mb-4">
 							<h3>{{p.description | safe}}</h2>
 
 						</div>
-					</a>
+					
 				</div>
 				{% endfor %}
 			</div>
